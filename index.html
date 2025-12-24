@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Connection Deck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lily top-left">🌸</div>
+    <div class="lily bottom-right">🌸</div>
+
+    <div class="header">
+        <h1>CAFE CONNECTION</h1>
+        <p class="subtitle">A Little Game of Knowing You</p>
+    </div>
+
+    <div class="deck-container">
+        <div class="card" id="card" onclick="toggleFlip()">
+            <div class="face front">
+              <h1>  Let's Play !!</h1>
+                <div class="icon">✨</div>
+            </div>
+            <div class="face back">
+                <span id="question-text">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="nextCard()">Next Card ➔</button>
+    </div>
+
+    <div id="character" class="character-bounce">
+        <img id="char-img" src="" alt="cute character">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

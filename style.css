@@ -1,0 +1,100 @@
+:root {
+    --bg: #fdf5e6;
+    --accent: #8b638d;
+    --card-front: #fffc52;
+    --text: #3e2723;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Georgia', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Lily Decorations */
+.lily {
+    position: fixed;
+    font-size: 3rem;
+    opacity: 0.6;
+    z-index: -1;
+}
+.top-left { top: 20px; left: 20px; transform: rotate(-15deg); }
+.bottom-right { bottom: 20px; right: 20px; transform: rotate(15deg); }
+
+.header { text-align: center; margin-bottom: 20px; }
+h1 { color: var(--accent); font-size: 1.5rem; letter-spacing: 2px; }
+
+.deck-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 420px;
+}
+
+.card {
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.card.is-flipped { transform: rotateY(180deg); }
+
+.face {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 8px solid white;
+    text-align: center;
+}
+
+.front { background-color: var(--card-front); }
+.back { 
+    background-color: white; 
+    transform: rotateY(180deg); 
+    font-size: 1.3rem; 
+    line-height: 1.5; 
+}
+
+/* Character Animation */
+#character {
+    position: fixed;
+    bottom: 10px;
+    width: 80px;
+    transition: all 0.5s ease;
+}
+
+#character img { width: 100%; height: auto; }
+
+.character-bounce {
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+button {
+    margin-top: 30px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
